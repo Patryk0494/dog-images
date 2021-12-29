@@ -1,0 +1,73 @@
+$primaryColor: rgba(0, 26, 128, 0.79);
+$secondaryColor: rgb(255, 255, 240);
+
+@mixin actionsTheme($primaryColor, $secondaryColor) {
+  border: 9px solid $primaryColor;
+  color: $primaryColor;
+  box-shadow: 0px 0px 13px $secondaryColor;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  height: 100vh;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
+.title {
+  text-transform: uppercase;
+  margin: 2rem 3rem;
+  color: $primaryColor;
+}
+
+.actions {
+  position: relative;
+  margin: 2rem 3rem;
+  display: flex;
+  flex-direction: row;
+  gap: 3rem;
+  & > * {
+    // margin: 0 1.5rem;
+    padding: 0.7rem 1.4rem;
+    font-size: 1.5rem;
+  }
+  &__button {
+    @include actionsTheme($secondaryColor, $primaryColor);
+    background-color: $primaryColor;
+    transition-duration: 0.5s;
+  }
+  &__select {
+    position: relative;
+    background-color: transparent;
+    @include actionsTheme($primaryColor, $secondaryColor);
+  }
+  &:before {
+    content: "Choos breed...";
+    position: absolute;
+    width: 100px;
+    height: 16px;
+    padding: 0 5px;
+    top: -5px;
+    left: 15px;
+    z-index: 1;
+    color: $primaryColor;
+    background-color: $secondaryColor;
+  }
+}
+.clicked {
+  background-color: transparent;
+  @include actionsTheme($primaryColor, $secondaryColor);
+}
+
+.image-container {
+  max-height: calc(100vh - 240px);
+  box-shadow: 0px 0px 13px $primaryColor;
+  & img {
+    width: auto;
+    height: 100%;
+  }
+}

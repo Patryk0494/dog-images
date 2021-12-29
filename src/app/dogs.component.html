@@ -1,0 +1,29 @@
+<div class="container">
+  <h1 class="title">Dog images finder</h1>
+  <div class="actions">
+    <!-- <div class="actions__select-wrapper"> -->
+    <select
+      class="actions__select"
+      name="breeds"
+      #selectBreed
+      (change)="onChange(selectBreed.value)"
+    >
+      <option *ngFor="let breed of breedArray" [ngValue]="breed">
+        {{ breed }}
+      </option>
+    </select>
+    <!-- </div> -->
+    <button
+      class="actions__button"
+      [ngClass]="isBtnTriggered ? 'clicked' : ''"
+      (click)="handleClick()"
+      (mousedown)="handleMousedown()"
+      (mouseup)="handleMouseup()"
+    >
+      Find dog!
+    </button>
+  </div>
+  <div class="image-container" *ngIf="src">
+    <img src="{{ src }}" alt="dog image" />
+  </div>
+</div>
