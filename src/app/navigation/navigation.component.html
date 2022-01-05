@@ -1,0 +1,16 @@
+<div class="navigation">
+  <div class="container">
+    <ul class="navigation__list">
+      <li class="navigation__item" *ngFor="let item of navigationList">
+        <a
+          routerLink="{{ item.path }}"
+          routerLinkActive="active-link"
+          [routerLinkActiveOptions]="{ exact: true }"
+          title="{{ item.title }}"
+        >
+          {{ item.title }}
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>

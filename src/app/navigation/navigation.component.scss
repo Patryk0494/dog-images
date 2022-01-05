@@ -1,0 +1,45 @@
+$primaryColor: rgba(0, 26, 128, 0.79);
+$secondaryColor: rgb(255, 255, 240);
+
+.navigation {
+  margin: 0;
+  background-color: $primaryColor;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+a {
+  padding: 1rem 1rem;
+  text-decoration: none;
+  color: $secondaryColor;
+  text-transform: uppercase;
+  display: inline-block;
+  &::before {
+    display: block;
+    content: attr(title);
+    font-weight: bold;
+    height: 0;
+    overflow: hidden;
+    visibility: hidden;
+  }
+}
+
+li:hover > a {
+  font-weight: bold;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  list-style-type: none;
+}
+
+.active-link {
+  font-weight: bold;
+  background-color: $secondaryColor;
+  color: $primaryColor;
+}
