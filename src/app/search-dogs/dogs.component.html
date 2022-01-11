@@ -12,9 +12,9 @@
       </option>
     </select>
     <button
-      class="actions__button"
+      class="actions__findBtn"
       [ngClass]="isBtnTriggered ? 'clicked' : ''"
-      (click)="handleClick()"
+      (click)="handleFindClick()"
       (mousedown)="handleMousedown()"
       (mouseup)="handleMouseup()"
     >
@@ -22,6 +22,9 @@
     </button>
   </div>
   <div class="image-container" *ngIf="src">
+    <button class="image__addBtn" (click)="handleAddClick()">
+      Add to favorites
+    </button>
     <img src="{{ src }}" alt="dog image" />
   </div>
 </div>

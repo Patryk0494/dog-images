@@ -1,5 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { DogsService } from './dogs.service';
+import { addFavorite } from '../store/store.actions';
+import { Store } from '@ngrx/store';
+import { v4 as uuid } from 'uuid';
 
 @Component({
   selector: 'dogs',
@@ -13,19 +16,22 @@ export class DogsComponent implements OnInit {
   src!: string;
   isBtnTriggered!: boolean;
 
-  constructor(private dogsService: DogsService) {}
+  constructor(private dogsService: DogsService, private store: Store) {}
 
   onChange(value: any) {
     this.selectedBreed = value;
-    console.log(value);
   }
 
-  handleClick() {
-    console.log(this.selectedBreed);
+  handleFindClick() {
     this.dogsService.getImgByBreed(this.selectedBreed).subscribe((resp) => {
-      console.log(resp);
       return (this.src = resp.message);
     });
+  }
+
+  handleAddClick() {
+    this.store.dispatch(
+      addFavorite({ breed: this.selectedBreed, src: this.src, id: uuid() })
+    );
   }
 
   handleMousedown() {
@@ -39,7 +45,6 @@ export class DogsComponent implements OnInit {
   ngOnInit() {
     this.dogsService.getDogsBreedList().subscribe((response) => {
       this.breedList = response.message;
-      console.log(this.breedList);
       return (this.breedArray = Object.keys(this.breedList));
     });
   }
