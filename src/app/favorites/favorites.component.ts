@@ -11,15 +11,10 @@ import { DogsState } from '../store/store.reducer';
   styleUrls: ['./favorites.component.scss'],
 })
 export class FavoritesComponent implements OnInit {
-  dogsState$: Observable<DogsState>;
-  dogs!: FavoriteDog[];
+  favoritesDogs$: Observable<FavoriteDog[]>;
 
   constructor(store: Store<AppState>) {
-    this.dogsState$ = store.select('dogsState');
-    this.dogsState$.subscribe(console.log);
-
-    this.dogsState$.subscribe((dogs) => (this.dogs = dogs.list));
-    console.log(this.dogs);
+    this.favoritesDogs$ = store.select('dogsState').pipe(map((x) => x.list));
   }
 
   ngOnInit(): void {}

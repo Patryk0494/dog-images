@@ -1,4 +1,4 @@
 <p>favorites works!</p>
 <ul>
-  <li *ngFor="let dog of dogs">{{ dog.breed }}</li>
+  <li *ngFor="let dog of favoritesDogs$ | async">{{ dog.breed }}</li>
 </ul>
