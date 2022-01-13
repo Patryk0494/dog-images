@@ -11,20 +11,16 @@
         {{ breed }}
       </option>
     </select>
-    <button
-      class="actions__findBtn"
-      [ngClass]="isBtnTriggered ? 'clicked' : ''"
-      (click)="handleFindClick()"
-      (mousedown)="handleMousedown()"
-      (mouseup)="handleMouseup()"
-    >
-      Find dog!
-    </button>
+    <app-button-common
+      (onBtnClick)="handleFindClick()"
+      [text]="btnText"
+    ></app-button-common>
   </div>
   <div class="image-container" *ngIf="src">
-    <button class="image__addBtn" (click)="handleAddClick()">
+    <app-button-add-fav (onAddClick)="handleAddClick()"></app-button-add-fav>
+    <!-- <button class="image__addBtn" (click)="handleAddClick()">
       Add to favorites
-    </button>
+    </button> -->
     <img src="{{ src }}" alt="dog image" />
   </div>
 </div>

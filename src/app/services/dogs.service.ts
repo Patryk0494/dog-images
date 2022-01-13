@@ -20,4 +20,10 @@ export class DogsService {
       .get(`${API_URL}breed/${breed}/images/random`)
       .pipe(map((resp) => resp));
   }
+
+  getRandomDog(): Observable<any> {
+    return this.http
+      .get(`${API_URL}breeds/image/random`)
+      .pipe(map((resp) => resp));
+  }
 }

@@ -30,18 +30,10 @@ $secondaryColor: rgb(255, 255, 240);
   display: flex;
   flex-direction: row;
   gap: 3rem;
-  & > * {
-    padding: 0.7rem 1.4rem;
-    font-size: 1.5rem;
-  }
-  &__findBtn {
-    @include actionsTheme($secondaryColor, $primaryColor);
-    background-color: $primaryColor;
-    transition-duration: 0.5s;
-    cursor: pointer;
-  }
   &__select {
     position: relative;
+    padding: 0.7rem 1.4rem;
+    font-size: 1.5rem;
     background-color: transparent;
     @include actionsTheme($primaryColor, $secondaryColor);
     cursor: pointer;
@@ -59,10 +51,6 @@ $secondaryColor: rgb(255, 255, 240);
     background-color: $secondaryColor;
   }
 }
-.clicked {
-  background-color: transparent;
-  @include actionsTheme($primaryColor, $secondaryColor);
-}
 
 .image-container {
   max-height: calc(100vh - 240px);
@@ -71,38 +59,5 @@ $secondaryColor: rgb(255, 255, 240);
   & img {
     width: auto;
     height: 100%;
-  }
-}
-@keyframes onBtnHover {
-  0% {
-    box-shadow: 0px 0px 7px $secondaryColor;
-  }
-  25% {
-    box-shadow: 0px 0px 5px $secondaryColor;
-  }
-  50% {
-    box-shadow: 0px 0px 7px $secondaryColor;
-  }
-  75% {
-    box-shadow: 0px 0px 9px $secondaryColor;
-  }
-  100% {
-    box-shadow: 0px 0px 7px $secondaryColor;
-  }
-}
-
-.image__addBtn {
-  position: absolute;
-  padding: 0.5rem 1rem;
-  margin: 0.5rem;
-  border: none;
-  color: $primaryColor;
-  box-shadow: 0px 0px 7px $secondaryColor;
-  cursor: pointer;
-  &:hover {
-    animation-name: onBtnHover;
-    animation-duration: 1.5s;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
   }
 }

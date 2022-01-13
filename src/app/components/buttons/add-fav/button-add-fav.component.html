@@ -1,0 +1,9 @@
+<button
+  class="add-btn"
+  (click)="addBtnFunction()"
+  (mousedown)="handleMousedown()"
+  (mouseup)="handleMouseup()"
+  [ngClass]="isBtnTriggered ? 'clicked' : ''"
+>
+  Add to favorites
+</button>

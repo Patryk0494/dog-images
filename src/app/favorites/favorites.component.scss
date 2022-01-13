@@ -1,0 +1,39 @@
+$secondaryColor: rgb(255, 255, 240);
+
+.image {
+  &__grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5%;
+    justify-content: flex-start;
+  }
+  &__item {
+    position: relative;
+    max-width: 30%;
+  }
+  &__title {
+    margin: 0;
+  }
+  &__content {
+    width: 100%;
+    height: auto;
+  }
+  &__delete-btn {
+    position: absolute;
+    right: 3px;
+    top: 20px;
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    z-index: 2;
+    border: none;
+    cursor: pointer;
+    background-color: $secondaryColor;
+    opacity: 0.6;
+    transition: opacity 0.5s ease-in-out;
+    transition-delay: 0.2s;
+    &:hover {
+      opacity: 1;
+    }
+  }
+}

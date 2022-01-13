@@ -1,0 +1,24 @@
+$primaryColor: rgba(0, 26, 128, 0.79);
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  height: 100vh;
+  margin: 0 auto;
+  padding-top: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
+.image-container {
+  position: relative;
+  max-height: calc(100vh - 240px);
+  margin-top: 1.5rem;
+  box-shadow: 0px 0px 13px $primaryColor;
+  & img {
+    width: auto;
+    height: 100%;
+  }
+}

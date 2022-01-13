@@ -1,0 +1,41 @@
+$primaryColor: rgba(0, 26, 128, 0.79);
+$secondaryColor: rgb(255, 255, 240);
+
+@keyframes onBtnHover {
+  0% {
+    box-shadow: 0px 0px 7px $secondaryColor;
+  }
+  25% {
+    box-shadow: 0px 0px 5px $secondaryColor;
+  }
+  50% {
+    box-shadow: 0px 0px 7px $secondaryColor;
+  }
+  75% {
+    box-shadow: 0px 0px 11px $secondaryColor;
+  }
+  100% {
+    box-shadow: 0px 0px 7px $secondaryColor;
+  }
+}
+
+.add-btn {
+  position: absolute;
+  padding: 0.5rem 1rem;
+  margin: 0.5rem;
+  border: none;
+  color: $primaryColor;
+  box-shadow: 0px 0px 7px $secondaryColor;
+  cursor: pointer;
+  transition-duration: 0.5s;
+  &:hover {
+    animation-name: onBtnHover;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+}
+
+.clicked {
+  transform: scale(0.9);
+}

@@ -1,6 +1,11 @@
 $primaryColor: rgba(0, 26, 128, 0.79);
 $secondaryColor: rgb(255, 255, 240);
 
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 .navigation {
   margin: 0;
   background-color: $primaryColor;
@@ -12,24 +17,25 @@ $secondaryColor: rgb(255, 255, 240);
 }
 
 a {
-  padding: 1rem 1rem 0.75rem;
+  padding: 0.75rem;
   text-decoration: none;
   color: $secondaryColor;
   text-transform: uppercase;
   display: inline-block;
-  border-bottom: 4px solid transparent;
   &::before {
     display: block;
     content: attr(title);
-    font-weight: bold;
     height: 0;
     overflow: hidden;
     visibility: hidden;
   }
 }
 
-li:hover > a {
-  font-weight: bold;
+li {
+  transition: all 0.5s;
+  &:hover {
+    box-shadow: inset 0 -15px 10px -10px $secondaryColor;
+  }
 }
 
 ul {
@@ -40,8 +46,9 @@ ul {
 }
 
 .active-link {
-  font-weight: bold;
   background-color: $secondaryColor;
   color: $primaryColor;
-  border-bottom: 4px solid $primaryColor;
+  box-shadow: 0 0 10px 4px $primaryColor;
+  transform: scale(1.1);
+  transition: all 0.5s;
 }

@@ -1,0 +1,10 @@
+<div class="container">
+  <app-button-common
+    (onBtnClick)="handleRandomBtnClick()"
+    [text]="btnText"
+  ></app-button-common>
+  <div *ngIf="src" class="image-container">
+    <app-button-add-fav (onAddClick)="handleAddClick()"></app-button-add-fav>
+    <img *ngIf="src" src="{{ src }}" alt="doge" />
+  </div>
+</div>

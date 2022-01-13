@@ -1,5 +1,5 @@
 export type FavoriteDog = {
-  breed: string;
+  breed?: string;
   src: string;
   id: string;
 };

@@ -1,0 +1,9 @@
+<button
+  class="button"
+  [ngClass]="isBtnTriggered ? 'clicked' : ''"
+  (click)="btnFunction()"
+  (mousedown)="handleMousedown()"
+  (mouseup)="handleMouseup()"
+>
+  {{ text }}
+</button>

@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { DogsService } from './dogs.service';
+import { DogsService } from '../services/dogs.service';
 import { addFavorite } from '../store/store.actions';
 import { Store } from '@ngrx/store';
 import { v4 as uuid } from 'uuid';
@@ -15,6 +15,7 @@ export class DogsComponent implements OnInit {
   selectedBreed!: string;
   src!: string;
   isBtnTriggered!: boolean;
+  btnText: string = 'Find Dog!';
 
   constructor(private dogsService: DogsService, private store: Store) {}
 
