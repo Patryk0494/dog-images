@@ -15,6 +15,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { ButtonCommonComponent } from './components/buttons/common/button-common.component';
 import { RandomDogComponent } from './random-dog/random-dog.component';
 import { ButtonAddFavComponent } from './components/buttons/add-fav/button-add-fav.component';
+import { BreedsComponent } from './breeds/breeds.component';
 
 @NgModule({
   imports: [
@@ -33,6 +34,7 @@ import { ButtonAddFavComponent } from './components/buttons/add-fav/button-add-f
     ButtonCommonComponent,
     RandomDogComponent,
     ButtonAddFavComponent,
+    BreedsComponent,
   ],
   bootstrap: [AppComponent],
   providers: [DogsService],

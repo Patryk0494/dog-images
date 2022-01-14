@@ -22,6 +22,11 @@ export class NavigationComponent implements OnInit {
       title: 'Favorites',
       path: 'favorites',
     },
+    {
+      id: 4,
+      title: 'Your breeds',
+      path: 'breeds',
+    },
   ];
 
   constructor() {}
