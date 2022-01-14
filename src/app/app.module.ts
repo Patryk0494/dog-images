@@ -16,6 +16,7 @@ import { ButtonCommonComponent } from './components/buttons/common/button-common
 import { RandomDogComponent } from './random-dog/random-dog.component';
 import { ButtonAddFavComponent } from './components/buttons/add-fav/button-add-fav.component';
 import { BreedsComponent } from './breeds/breeds.component';
+import { CurrentBreedComponent } from './current-breed/current-breed.component';
 
 @NgModule({
   imports: [
@@ -35,6 +36,7 @@ import { BreedsComponent } from './breeds/breeds.component';
     RandomDogComponent,
     ButtonAddFavComponent,
     BreedsComponent,
+    CurrentBreedComponent,
   ],
   bootstrap: [AppComponent],
   providers: [DogsService],

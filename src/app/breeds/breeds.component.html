@@ -1,1 +1,17 @@
-<p>breeds works!</p>
+<ul>
+  <li *ngFor="let breed of uniqueBreeds">
+    <a href="breeds/{{ breed }}" routerLink="breeds/{{ breed }}">{{ breed }}</a>
+  </li>
+</ul>
+<ng-container *ngFor="let breed of uniqueBreeds">
+  <div>
+    <ng-container *ngIf="router.url.includes(breed)">
+      <p>Your are in {{ breed }} Section</p>
+      <ng-container *ngFor="let dog of favoritesDogs$ | async">
+        <ng-container *ngIf="dog.breed === breed">
+          <img src="{{ dog.src }}" alt="doge" />
+        </ng-container>
+      </ng-container>
+    </ng-container>
+  </div>
+</ng-container>
