@@ -1,1 +1,14 @@
-<p *ngIf="router.url.includes('akita')">Your are in akita Section</p>
+<div>
+  <p class="current-breed__header">
+    Your favorites <span class="capitalize">{{ breed }}</span> images:
+  </p>
+  <div class="image__grid">
+    <ng-container *ngFor="let dog of favoritesDogs$ | async">
+      <ng-container *ngIf="dog.breed === breed">
+        <div class="image__item">
+          <img src="{{ dog.src }}" alt="doge" class="image__content" />
+        </div>
+      </ng-container>
+    </ng-container>
+  </div>
+</div>

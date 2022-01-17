@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
+import { Store } from '@ngrx/store';
+import { map, Observable } from 'rxjs';
+import { AppState } from '../app.state';
+import { FavoriteDog } from '../models/favoriteDog.model';
 
 @Component({
   selector: 'app-current-breed',
@@ -7,7 +11,23 @@ import { Router } from '@angular/router';
   styleUrls: ['./current-breed.component.scss'],
 })
 export class CurrentBreedComponent implements OnInit {
-  constructor(public router: Router) {}
+  breed!: any;
+  favoritesDogs$!: Observable<FavoriteDog[]>;
 
-  ngOnInit(): void {}
+  constructor(
+    private store: Store<AppState>,
+    public router: Router,
+    private route: ActivatedRoute
+  ) {
+    this.favoritesDogs$ = store
+      .select('dogsState')
+      .pipe(map((dogsState) => dogsState.list));
+  }
+
+  ngOnInit(): void {
+    this.route.params.subscribe((params) => {
+      this.breed = params['breed'];
+      console.log(this.breed);
+    });
+  }
 }

@@ -1,6 +1,10 @@
-a {
-  text-decoration: none;
+$primaryColor: rgba(0, 26, 128, 0.79);
+
+.capitalize {
+  text-transform: capitalize;
 }
-li {
-  list-style: none;
+
+.current-breed__header {
+  font-size: 1.5rem;
+  color: $primaryColor;
 }

@@ -1,7 +1,22 @@
+$primaryColor: rgba(0, 26, 128, 0.79);
+
 a {
   text-decoration: none;
-  color: #000;
 }
 li {
+  color: $primaryColor;
+  text-transform: capitalize;
+  font-weight: bold;
   list-style: none;
+  transition: all 0.2s ease-in-out;
+  transition-delay: 0.1s;
+  cursor: pointer;
+  &:hover {
+    transform: translateX(10px);
+  }
+}
+
+.active-breed {
+  transform: translateX(10px);
+  list-style-type: circle;
 }

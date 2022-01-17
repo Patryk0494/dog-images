@@ -22,7 +22,6 @@ export class RandomDogComponent implements OnInit {
   }
 
   handleAddClick() {
-    console.log(this.src);
     const srcToArr = this.src.split('/');
     this.breed = srcToArr[srcToArr.length - 2];
     this.store.dispatch(

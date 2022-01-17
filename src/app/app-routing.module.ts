@@ -14,7 +14,7 @@ const routes: Routes = [
   {
     path: 'breeds',
     component: BreedsComponent,
-    children: [{ path: 'breeds/:current', component: CurrentBreedComponent }],
+    children: [{ path: ':breed', component: CurrentBreedComponent }],
   },
 ];
 
