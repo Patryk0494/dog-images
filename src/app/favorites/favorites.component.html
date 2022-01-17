@@ -1,8 +1,8 @@
 <h1>Your favorites dogs!</h1>
 <div class="image__grid">
   <span *ngIf="(favoritesDogs$ | async)?.length === 0"
-    >You have no favorites dogs saved. <a href="/search">Find</a> images of your
-    preferenced breed and add to favorites.</span
+    >You have no favorites dogs saved. <a routerLink="/search">Find</a> images
+    of your preferenced breed and add to favorites.</span
   >
 
   <div class="image__item" *ngFor="let dog of favoritesDogs$ | async">
