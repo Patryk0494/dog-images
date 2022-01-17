@@ -1,0 +1,10 @@
+$primaryColor: rgba(0, 26, 128, 0.79);
+
+.capitalize {
+  text-transform: capitalize;
+}
+
+.current-breed__header {
+  font-size: 1.5rem;
+  color: $primaryColor;
+}

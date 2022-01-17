@@ -5,7 +5,7 @@
         <a
           routerLink="{{ item.path }}"
           routerLinkActive="active-link"
-          [routerLinkActiveOptions]="{ exact: true }"
+          [routerLinkActiveOptions]="{ exact: item.exact }"
           title="{{ item.title }}"
         >
           {{ item.title }}

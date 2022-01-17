@@ -7,3 +7,36 @@ body {
   max-width: 1200px;
   margin: 0 auto;
 }
+
+.image {
+  &__grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+  &__item {
+    position: relative;
+    max-width: 90%;
+    margin: 0 auto 1rem;
+  }
+  @media (min-width: 420px) {
+    &__grid {
+      gap: 4%;
+    }
+    &__item {
+      max-width: 48%;
+    }
+  }
+  @media (min-width: 768px) {
+    &__grid {
+      gap: 5%;
+    }
+    &__item {
+      max-width: 30%;
+    }
+  }
+  &__content {
+    width: 100%;
+    height: auto;
+  }
+}

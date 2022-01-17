@@ -1,0 +1,10 @@
+<ul>
+  <li
+    *ngFor="let breed of uniqueBreeds"
+    routerLink="{{ breed }}"
+    routerLinkActive="active-breed"
+  >
+    {{ breed }}
+  </li>
+</ul>
+<router-outlet></router-outlet>
